@@ -1,40 +1,20 @@
-package com.universidadupc.retopracticoclase.persistence.entity;
+package com.universidadupc.retopracticoclase.models;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_centro_salud")
-public class CentroSalud {
+public class CentroSaludmodel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long codigo;
     private String nombre;
     private String tipo;
-    @Column(name="calificacion_infraestructura")
     private Integer calificacionInfraestructura;
-    @Column(name="calificacion_servicios")
     private Integer calificacionServicios;
     private Boolean ambulancias;
-
-    public CentroSalud() {
-    }
-
-    public CentroSalud(
-        Long codigo,
-        String nombre,
-        String tipo,
-        Integer calificacionInfraestructura,
-        Integer calificacionServicios,
-        Boolean ambulancias
-    ) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.calificacionInfraestructura = calificacionInfraestructura;
-        this.calificacionServicios = calificacionServicios;
-        this.ambulancias = ambulancias;
-    }
 
     public Long getCodigo() {
         return codigo;
