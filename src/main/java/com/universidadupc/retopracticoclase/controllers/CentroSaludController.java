@@ -23,4 +23,9 @@ public class CentroSaludController {
     public CentroSaludModel guardarCentroSalud(@RequestBody CentroSaludModel centro){
         return centroSaludService.guardar(centro);
     }
+
+    @GetMapping("/estado")
+    public List<CentroSaludModel> obtenerEstadoAprobado(){
+        return centroSaludService.obtenerEstadoAprobado();
+    }
 }
