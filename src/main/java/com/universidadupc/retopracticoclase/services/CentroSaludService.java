@@ -1,12 +1,11 @@
 package com.universidadupc.retopracticoclase.services;
 
-import com.universidadupc.retopracticoclase.models.CentroSaludModel;
+import com.universidadupc.retopracticoclase.entities.CentroSaludEntity;
 import com.universidadupc.retopracticoclase.repositories.CentroSaludRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Contiene la lógica de negocio
@@ -16,17 +15,17 @@ public class CentroSaludService {
     @Autowired
     CentroSaludRepository centroSaludRepository;
 
-    public List<CentroSaludModel> obtenerCentrosSalud(){
-        return (List<CentroSaludModel>) centroSaludRepository.findAll();
+    public List<CentroSaludEntity> obtenerCentrosSalud(){
+        return (List<CentroSaludEntity>) centroSaludRepository.findAll();
     }
 
-    public CentroSaludModel guardar(CentroSaludModel centro){
+    public CentroSaludEntity guardar(CentroSaludEntity centro){
         return centroSaludRepository.save(centro);
     }
 
     public Boolean obtenerEstadoAprobado(Long codigo){
         boolean status = false;
-        CentroSaludModel centro = centroSaludRepository.findByCodigo(codigo);
+        CentroSaludEntity centro = centroSaludRepository.findByCodigo(codigo);
         double calificacion = centro.getCalificacionInfraestructura() * 0.35 + centro.getCalificacionServicios() * 0.65;
 
         if (calificacion >= 80) {

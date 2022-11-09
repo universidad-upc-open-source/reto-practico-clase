@@ -1,6 +1,6 @@
 package com.universidadupc.retopracticoclase.controllers;
 
-import com.universidadupc.retopracticoclase.models.CentroSaludModel;
+import com.universidadupc.retopracticoclase.entities.CentroSaludEntity;
 import com.universidadupc.retopracticoclase.services.CentroSaludService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +15,17 @@ public class CentroSaludController {
     CentroSaludService centroSaludService;
 
     @GetMapping()
-    public List<CentroSaludModel> obtenerCentrosSalud(){
+    public List<CentroSaludEntity> obtenerCentrosSalud(){
         return centroSaludService.obtenerCentrosSalud();
     }
 
     @PostMapping()
-    public CentroSaludModel guardarCentroSalud(@RequestBody CentroSaludModel centro){
+    public CentroSaludEntity guardarCentroSalud(@RequestBody CentroSaludEntity centro){
         return centroSaludService.guardar(centro);
     }
 
     @GetMapping("/estado")
-    public List<CentroSaludModel> obtenerEstadoAprobado(){
+    public List<CentroSaludEntity> obtenerEstadoAprobado(){
         return centroSaludService.obtenerEstadoAprobado();
     }
 }

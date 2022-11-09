@@ -1,10 +1,10 @@
-package com.universidadupc.retopracticoclase.models;
+package com.universidadupc.retopracticoclase.entities;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_centro_salud")
-public class CentroSaludModel {
+public class CentroSaludEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

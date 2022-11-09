@@ -1,13 +1,13 @@
 package com.universidadupc.retopracticoclase.repositories;
 
-import com.universidadupc.retopracticoclase.models.CentroSaludModel;
+import com.universidadupc.retopracticoclase.entities.CentroSaludEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CentroSaludRepository extends CrudRepository<CentroSaludModel, Long> {
-    List<CentroSaludModel> findByTipo(String tipo);
-    CentroSaludModel findByCodigo(Long codigo);
+public interface CentroSaludRepository extends CrudRepository<CentroSaludEntity, Long> {
+    List<CentroSaludEntity> findByTipo(String tipo);
+    CentroSaludEntity findByCodigo(Long codigo);
 }
